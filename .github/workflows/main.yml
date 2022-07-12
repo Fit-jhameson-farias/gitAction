@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@1.0.0
 
       - name: Create pull request
-        uses: gitActions/branch/1
+        uses: gitActions/mytest
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           head: ${{ github.ref }}
