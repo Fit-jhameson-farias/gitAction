@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@1.0.0
 
       - name: Create pull request
-        uses: Fit-jhameson-farias/create-pull-request@mytest
+        uses: quangvo09/create-pull-request@mytest
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           head: ${{ github.ref }}
