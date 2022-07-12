@@ -13,6 +13,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           head: main
           base:
-            - mytest
-            - branch/1
+            branches:
+              - mytest
+              - branch/1
           title: "An automatically created PR!"
