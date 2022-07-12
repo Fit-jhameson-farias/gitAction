@@ -1,0 +1,19 @@
+name: "Create PR"
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  create-pr-on-push:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@1.0.0
+
+      - name: Create pull request
+        uses: fit-jhameson-farias/create-pull-request@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          head: ${{ github.ref }}
+          base: master
+          title: "An automatically created PR!"
