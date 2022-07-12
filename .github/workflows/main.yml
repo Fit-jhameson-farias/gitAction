@@ -1,5 +1,8 @@
-name: "Create PR"
-on: push
+name: "Criando Pull Request"
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   create-pr-on-push:
@@ -12,5 +15,13 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           head: main
-          base: branch/1
+          base: terra
+          title: "PR automático!"
+
+      - name: Create pull request
+        uses: thomaseizinger/create-pull-request@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          head: main
+          base: generoso
           title: "PR automático!"
