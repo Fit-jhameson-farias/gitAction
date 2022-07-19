@@ -1,27 +1,23 @@
-name: "Criando Pull Request"
-on:
-  push:
-    branches:
-      - main
+name: Push File
+
+on: push
 
 jobs:
-  create-pr-on-push:
-    runs-on: windows-latest
+  pull-request:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@1.0.0
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Create pull request
-        uses: thomaseizinger/create-pull-request@master
+        uses: paygoc6/action-pull-request-another-repo@v1.0.1
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          head: main
-          base: terra
-          title: "PR automático terra!"
-
-      - name: Create pull request
-        uses: thomaseizinger/create-pull-request@master
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          head: main
-          base: generoso
-          title: "PR automático generoso!"
+          source_folder: "source-folder"
+          destination_repo: "Fit-jhameson-farias/SalvarPDF"
+          destination_folder: "folder-name"
+          destination_base_branch: "main"
+          destination_head_branch: "master"
+          user_email: "jhameson.farias@fitbank.com.br"
+          user_name: "Fit-jhameson-farias"
