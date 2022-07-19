@@ -16,7 +16,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           head: main
           base: terra
-          title: "PR automático!"
+          title: "PR automático terra!"
 
       - name: Create pull request
         uses: thomaseizinger/create-pull-request@master
@@ -24,4 +24,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           head: main
           base: generoso
-          title: "PR automático!"
+          title: "PR automático generoso!"
