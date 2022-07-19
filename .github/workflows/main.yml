@@ -16,7 +16,6 @@ jobs:
         with:
           source_folder: "source-folder"
           destination_repo: "Fit-jhameson-farias/SalvarPDF"
-          destination_folder: "folder-name"
           destination_base_branch: "main"
           destination_head_branch: "master"
           user_email: "jhameson.farias@fitbank.com.br"
